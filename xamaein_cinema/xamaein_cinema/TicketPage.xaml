@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.TicketPage"
+           NavigationPage.HasNavigationBar="False"
+              BackgroundColor="#1E1E1E">
+    <ContentPage.Content>
+        <Frame  Margin="30"  BackgroundColor="#FF2E63" CornerRadius="30">
+            <StackLayout >
+                <Label  Text="билет"  FontSize="18" TextColor="LightGray"  />
+                <Label x:Name="NumberLabel" Text="№123" TextColor="White" FontSize="50" FontAttributes="Bold" Margin="0,-20,0,0"/>
+
+                <Label  Text="фильм"  FontSize="18" TextColor="LightGray"  Margin="0,10,0,0" />
+                <Label x:Name="NameFilmLabel" FontSize="30" TextColor="White"  Margin="0,-10"/>
+
+                <Label  Text="дата и время"  FontSize="18" TextColor="LightGray"  Margin="0,10,0,0" />
+                <Label x:Name="DateLabel" TextColor="White" FontSize="25" Margin="0,-10"/>
+
+                <Label  Text="цена"  FontSize="18" TextColor="LightGray" Margin="0,10,0,0" />
+                <Label x:Name="PriceLabel" TextColor="White" FontSize="25" Margin="0,-10"/>
+
+                <Label  Text="зал"  FontSize="18" TextColor="LightGray" Margin="0,10,0,0" />
+                <Label x:Name="HallLabel" TextColor="White" FontSize="25" Margin="0,-10"/>
+
+                <StackLayout Orientation="Horizontal" >
+                    <StackLayout>
+                        <Label  Text="ряд"  FontSize="18" TextColor="LightGray" Margin="0,10,0,0" />
+                        <Label x:Name="RowLabel" TextColor="White" FontSize="25" Margin="0,-10"/>
+                    </StackLayout>
+                    <StackLayout Margin="30,0">
+                        <Label  Text="место"  FontSize="18" TextColor="LightGray" Margin="0,10,0,0" />
+                        <Label x:Name="SeatLabel" TextColor="White" FontSize="25" Margin="0,-10"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Label VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center"  TextColor="White" FontSize="13"  Text="Данный билет является гарантией бронирования вашего места, для прохождения на сеанс необходимо оплатить билет в кассе или при входе в зал"/>
+               
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

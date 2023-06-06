@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Admin.SeansPageA"
+    BackgroundColor="#1B1A28"
+              NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20" Orientation="Vertical">
+            <Label Text="Сенансы" TextColor="White" FontAttributes="Bold" FontSize="18" Margin="0,0,0,20"/>
+            <ListView x:Name="myListView" ItemsSource="{Binding}" ItemSelected="myListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Label Text="{Binding nameF}" FontSize="14" TextColor="White" WidthRequest="100"/>
+                                    <Label Text="{Binding price}" FontSize="14" TextColor="White" WidthRequest="40"/>
+                                    <Label Text="{Binding date_time}" FontSize="14" TextColor="White" WidthRequest="100"/>
+                                    <Label Text="{Binding number_zal}" FontSize="14" TextColor="White"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button  Text="добавить" TextColor="White" WidthRequest="220" HeightRequest="40"  Clicked="Button_Clicked"
+                CornerRadius="20" BackgroundColor="#9747FF"  HorizontalOptions="Center" VerticalOptions="EndAndExpand"   Margin="0,0,0,20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

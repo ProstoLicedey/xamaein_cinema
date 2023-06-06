@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Registr_Page"
+             BackgroundColor="#1B1A28"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout x:Name="All" VerticalOptions="Center">
+
+            <StackLayout Padding="15">
+                <Label x:Name="Labelreg" Text="Регистрация"  FontSize="Title" Padding="30,10,30,10" HorizontalOptions="Center" TextColor="White"/>
+                <Entry   x:Name="PhoneEntry" TextColor="White" Placeholder = "Телефон" PlaceholderColor="Gray" Keyboard="Numeric" MaxLength="12" />
+                <Entry x:Name="SurNameEntry" Placeholder = "Фамилия" />
+                <Entry x:Name="NameEntry" Placeholder = "Имя" />
+                <Entry x:Name="passwordEntry"  Placeholder = "Пароль" IsPassword ="True" />
+                <Entry x:Name="passwordEntry2"  Placeholder = "Повторите пароль" IsPassword ="True" />
+                <DatePicker x:Name="DateB" Format="D" />
+
+                <Button  BackgroundColor="#9747FF" x:Name="btn_reg" HeightRequest="50" WidthRequest="400" FontSize="20" Text="Зарегестрироваться" Clicked="Reg_clck"  />
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

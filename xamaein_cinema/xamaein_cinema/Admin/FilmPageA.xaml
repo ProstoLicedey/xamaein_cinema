@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Admin.FilmPageA"
+              BackgroundColor="#1B1A28"
+              NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20" Orientation="Vertical">
+            <Label Text="Фильмы" TextColor="White" FontAttributes="Bold" FontSize="18" Margin="0,0,0,20"/>
+            <ListView x:Name="myListView" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Label Text="{Binding name}" FontSize="14" TextColor="White" WidthRequest="100"/>
+                                    <Label Text="{Binding description}" FontSize="10" TextColor="White" WidthRequest="100"/>
+                                    <Label Text="{Binding age_restriction}" FontSize="14" TextColor="White" WidthRequest="25"/>
+                                    <Label Text="{Binding image}" FontSize="14" TextColor="White"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+         
+            <Button  Text="добавить" TextColor="White" WidthRequest="220" HeightRequest="40"  Clicked="Button_Clicked"
+                CornerRadius="20" BackgroundColor="#9747FF"  HorizontalOptions="Center" VerticalOptions="EndAndExpand"   Margin="0,0,0,20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

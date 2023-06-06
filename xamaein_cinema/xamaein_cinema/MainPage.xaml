@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.MainPage" BackgroundColor="#1B1A28"
+
+             NavigationPage.HasNavigationBar="False" >
+
+    <Grid RowDefinitions="Auto, *" Padding="0" RowSpacing="40">
+        <StackLayout Orientation="Vertical" Margin="20,10,0,0">
+
+            <Label Text="CINEMA МАК" TextColor="#00B7FC" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal" Margin="20,0,20,0" HorizontalOptions="End" >
+                <StackLayout  x:Name="TownBtn" Orientation="Horizontal" Margin="0,0,10,0" >
+                    
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Town_Clicked" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+                
+                    <Image Source="Vector.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start"  Margin="0, 0,0,0"/>
+                    <Label Text="г. Казань" HorizontalOptions="Start" TextColor="White"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Auth_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="Group.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start"  Margin="0, 0,0,0"/>
+                    <Label x:Name="NameLabel" Text="Вход" HorizontalOptions="Start" TextColor="White"/>
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Spacing="15">
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions ="Center"  >
+                <Label TextColor="White"  Text="Расписание на " FontSize="20"   />
+                <DatePicker TextColor="White"  x:Name="DateSes" Format="D"  />
+            </StackLayout>-->
+
+            <CollectionView  SelectionMode="Single" ItemsSource="{Binding Films}" 
+                            SelectedItem="{Binding SelectedFilms}" SelectionChanged="FilmsSelected" >
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="20" HorizontalItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <Label Text="No ticket found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="#80808088"
+                                     Spacing="10"
+                                     Orientation = "Horizontal"
+                                      HeightRequest="150"      >
+                            <Image Source="{Binding image}" 
+                                   HeightRequest="150"
+                                   WidthRequest="95"
+                                  Aspect="Fill"
+                                   HorizontalOptions="StartAndExpand"
+                                   />
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout 
+                                     Spacing="10"
+                                     Orientation = "Horizontal"
+                                     HorizontalOptions="Fill" 
+                                WidthRequest="1450"
+                                x:Name="panelka"
+                                    >
+                                    <Label Text="{Binding name}" 
+                                        TextColor="White"    
+                                        FontAttributes = "Bold" 
+                                        FontSize = "22"
+                                        HorizontalOptions = "Start"/>
+                                    <Label Text="{Binding age_restriction}"  
+                                               TextColor="DarkGray"    
+                                               FontAttributes = "Bold" 
+                                               FontSize = "17"
+                                               HorizontalOptions ="EndAndExpand"
+                                             Margin="0,0,10,0"/>
+                                </StackLayout>
+                                <Label Text="{Binding description}"  
+                                               TextColor="White"    
+                                         
+                                               FontSize = "14"
+                                               HorizontalOptions ="EndAndExpand"
+                                             Margin="0,0,10,0"/>
+                                <!--<CollectionView SelectionMode="None" ItemsSource="{Binding Films}" 
+                            SelectedItem="{Binding SelectedTicket}" >
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <FlexLayout     Direction = "Row"
+                                                Wrap = "Wrap"
+                                                 AlignContent ="Stretch">
+
+
+                                                <Button  TextColor = "White"
+                                                         Text = "{Binding Image }"
+                                                         WidthRequest = "70"
+                                                         HeightRequest= "40"
+                                                         BackgroundColor = "#7700FF"
+                                                         Margin = "5, 5, 5, 5"
+                                                         CornerRadius="20"/>
+                                            </FlexLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>-->
+
+
+
+
+
+
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

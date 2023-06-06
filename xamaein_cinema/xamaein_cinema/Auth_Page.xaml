@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Auth_Page" BackgroundColor="#1B1A28"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+
+
+            <StackLayout Padding="15" VerticalOptions="Center" >
+                <Label x:Name="Labelreg" Text="Войти"  FontSize="Title" Padding="30,10,30,10" HorizontalOptions="Center" TextColor="White"/>
+             
+
+                    <Entry   x:Name="PhoneEntry" TextColor="White" Placeholder = "Телефон" PlaceholderColor="Gray" Keyboard="Numeric" MaxLength="12" />
+                 
+                <Entry x:Name="passwordEntry"  TextColor="White" Placeholder = "Пароль" IsPassword ="True" PlaceholderColor="Gray" />
+                <Button TextColor="White" Margin="10, 40, 0, 10" BackgroundColor="#9747FF" x:Name="btn_reg" HeightRequest="50" WidthRequest="400" FontSize="20" Text="Войти" Clicked="Auth_clck" />
+
+            </StackLayout>
+            <StackLayout Padding="15" VerticalOptions="End" >
+                <Button  TextColor="White" Text="Зарегестрироваться"   FontSize="20" Padding="10,0,30,10" HorizontalOptions="Center" Margin="10, 40, 0, 10" BackgroundColor="#00ffffff" Clicked="Go_Reg"  CornerRadius="7" />
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

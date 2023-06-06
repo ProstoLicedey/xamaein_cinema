@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.AdminTickets"
+             BackgroundColor="#1B1A28"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10">
+            <Label x:Name="Labelreg" Text="Контролер"  FontSize="Title" Padding="0,10,30,10" HorizontalOptions="Start" TextColor="White"/>
+            <Entry   x:Name="TicketEntry" TextColor="White" Placeholder = "Номер билета" PlaceholderColor="Gray"  MaxLength="12"  Keyboard="Numeric" />
+            <Button  Text="Поиск" TextColor="White" WidthRequest="100" HeightRequest="40" 
+                CornerRadius="20" BackgroundColor="#9747FF"  HorizontalOptions="End"  Margin="0,20,10,20" Clicked="Poisk_btn" />
+
+            <StackLayout x:Name="Information" IsVisible="False" HorizontalOptions="Start" >
+                
+                <Label  Text="Информация о билете" TextColor="White" FontSize="30" FontAttributes="Bold"   Margin="10,20,0,0"/>
+                <Label x:Name="Dateinfo" Text="Дата:" TextColor="White" FontSize="18"   Margin="10,0,0,0"/>
+                <Label x:Name="FilmInfo" Text="Фильм:" TextColor="White" FontSize="18"  Margin="10,0,0,0"/>
+                <Label x:Name="Zalinfo" Text="Зал:" TextColor="White" FontSize="18"   Margin="10,0,0,0"/>
+                <Label x:Name="Readinfo" Text="Ряд:" TextColor="White" FontSize="18"   Margin="10,0,0,0"/>
+                <Label x:Name="Mestoinfo" Text="Место:" TextColor="White" FontSize="18"  Margin="10,0,0,0"/>
+                <Label x:Name="Surnamrinfo" Text="Фамилия:" TextColor="White" FontSize="18"  Margin="10,0,0,0"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Button  Text="сборос" TextColor="White" WidthRequest="100" HeightRequest="60" Clicked="Sbros_btn"
+                CornerRadius="30" BackgroundColor="DarkRed"  HorizontalOptions="End"  Margin="0,20,0,20"/>
+                    <Button  x:Name="prohod" Text="Прошел" TextColor="White" WidthRequest="150" HeightRequest="60" Clicked="Button_Clicked"
+                CornerRadius="30" BackgroundColor="Green"  HorizontalOptions="End"  Margin="70,20,10,20"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

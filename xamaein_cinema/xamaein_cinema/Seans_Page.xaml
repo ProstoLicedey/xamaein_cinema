@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Seans_Page"   BackgroundColor="#1B1A28"
+             NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <!--<Label Text="CINEMA МАК" TextColor="#00B7FC" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />-->
+
+            <StackLayout Orientation="Vertical"   Margin="20,20,20,0" >
+                <StackLayout Orientation="Horizontal" Margin="0,20" VerticalOptions="Start" Spacing="20">
+                    <Image x:Name="ImageFilm" Source="no_image.png" Aspect="AspectFill" WidthRequest="80" HeightRequest="90" 
+                   HorizontalOptions="Start"/>
+                    <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="NameFilm" Text="Гарии Поттер" TextColor="White" FontSize="25" FontAttributes ="Bold"/>
+                        <Frame VerticalOptions="Start" BorderColor ="White" CornerRadius =" 100" BackgroundColor="#1B1A28" WidthRequest="30" HeightRequest="30"  Padding="0">
+                             <Label x:Name="AgeFilm" Text="12+"   TextColor="White"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </StackLayout>
+
+                        <Label Text="Га́рри Джеймс По́ттер — литературный персонаж, главный герой серии романов английской писательницы Джоан Роулинг."    
+                               x:Name="DiscFilm"
+                               TextColor="White"     
+                               FontSize = "14"
+                               HorizontalOptions ="Start"
+                               Margin="0,0,10,0"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <BoxView BackgroundColor="White" Opacity="0.2" HeightRequest="1" VerticalOptions="End"/>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions ="Center" Margin="10,20,0,0" >
+                <Label TextColor="White"  Text="Расписание на " FontSize="20" VerticalOptions="Center" />
+                <!--<DatePicker TextColor="White"  x:Name="DateSes" Format="D" VerticalOptions="Center" />-->
+                <Picker x:Name="picker" FontAttributes="Italic"  HorizontalTextAlignment="Center" TextColor="White" VerticalOptions="Center" WidthRequest="100" SelectedIndexChanged="picker_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>даты</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout  Orientation ="Horizontal" Margin="0,20,0,0" >
+
+                <FlexLayout  x:Name="vibors" Wrap="Wrap " WidthRequest="340" HorizontalOptions="Center" Margin="10">
+                    <!--<Frame   BorderColor ="White" CornerRadius ="5" BackgroundColor="#1B1A28" WidthRequest="90" HeightRequest="60"  Padding="0,5,0,5" Margin="10">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Button_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label  Text="23:40" FontAttributes ="Bold"  FontSize="20" TextColor="White"   HorizontalOptions="Center"/>
+                            <Label  Text="250₽"   TextColor="White"   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>-->
+                 
+                </FlexLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

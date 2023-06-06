@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamaein_cinema.Oform"
+             BackgroundColor="#1B1A28"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1B1A28" HorizontalOptions="FillAndExpand">
+            <!--меню-->
+
+            <StackLayout Orientation="Horizontal" Margin="20,20,20,20" VerticalOptions="Start" Spacing="20">
+                <Image x:Name="FilmImage" Source="HarryP.jpeg" Aspect="AspectFill" WidthRequest="70" HeightRequest="100" 
+                   HorizontalOptions="Start"/>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="NameFilm" Text="Гарри Поттер" TextColor="White" FontSize="25" FontAttributes ="Bold"/>
+                        <Frame VerticalOptions="Start" BorderColor ="White" CornerRadius =" 100" BackgroundColor="#1B1A28" WidthRequest="30" HeightRequest="30"  Padding="0">
+                            <Label x:Name="AgeFilm" Text="12+"   TextColor="White"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Source="calendar.png" HeightRequest="15" WidthRequest="15"/>
+                            <Label x:Name="DateSes" Text="12.03.2023" 
+                                   TextColor="#8989CB" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <!--<StackLayout Orientation="Horizontal">
+                            <Image Source="time.png" HeightRequest="15" WidthRequest="15"/>
+                            <Label Text="17:00" 
+                               TextColor="#8989CB" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>-->
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" >
+                      
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Зал:"  TextColor="#8989CB" FontSize="12" VerticalOptions="Center" />
+                            <Label Text="3 "  x:Name="ZalSes" TextColor="#8989CB" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+            <BoxView BackgroundColor="White" Opacity="0.2" HeightRequest="1" VerticalOptions="End"/>
+
+            <StackLayout x:Name="StackMest" Orientation="Vertical" />
+            <Label x:Name="Label_sum" Text="К Оплате  " FontSize="20"   HorizontalOptions="End" Margin="10"/>
+            
+         
+            <Button  Text="Оформить" TextColor="White" WidthRequest="220" HeightRequest="40" Clicked="Oform_clck"
+                CornerRadius="20" BackgroundColor="#9747FF"  HorizontalOptions="Center" VerticalOptions="EndAndExpand"   Margin="0,0,0,20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
